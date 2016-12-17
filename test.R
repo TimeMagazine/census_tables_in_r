@@ -8,5 +8,4 @@ fields <- list(
 );
 
 test <- read_census_table("census_samples/AGE AND SEX", "ACS_15_1YR_S0101", fields)
-write.csv(test, paste("output_samples/", file_name, ".csv", sep=""), row.names=F)
-
+write.csv(test, paste("output_samples/ACS_15_1YR_S0101.csv", sep=""), row.names=F)
