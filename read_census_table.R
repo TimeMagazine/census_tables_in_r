@@ -100,6 +100,7 @@ read_census_table <- function(directory, file_name, field_names, ignore_MOE=TRUE
     return(matches);
   }
   
+  
   for (field_name in field_names) {
     matches <- match_text_to_field(field_name);
     if (!is.null(matches)) {
@@ -109,7 +110,7 @@ read_census_table <- function(directory, file_name, field_names, ignore_MOE=TRUE
           output[NROW(output)+1,] <- list(
             census[c,]$GEO.display.label,
             census[c,]$GEO.id2,
-            match$field,
+            sub("Estimate; ", "", match$field),
             match$code,
             census[c,][[match$code]]
           )
